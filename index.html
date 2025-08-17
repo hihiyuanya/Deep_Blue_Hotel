@@ -1,43 +1,129 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>深蓝大饭店【哀丽秘榭社区食堂】</title>
-    <style>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flat 布局</title>
+    <style>
+      @font-face {
+        font-family: "MilkFont"; /* 自定义的字体名称 */
+        src: url("font/1.woff2") format("woff2"),
+          url("font/1.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; /* 优化字体加载 */
+      }
       body {
         margin: 0;
+        height: 100vh;
+        background-color: #eee;
+        font-family: "MilkFont", sans-serif;
+      }
+
+      /* * {
+              border: 1px solid black;
+            } */
+
+      .flex {
+        display: flex;
+      }
+
+      .white {
+        background-color: white;
+      }
+
+      .flex1 {
+        flex: 1;
+      }
+
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      }
+      .daohang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(170, 170, 170);
+        font-size: 20px;
+        color: #666;
+      }
+      .font-center {
+        text-align: center;
       }
     </style>
   </head>
-  <body>
-    <div style="
-      background-color: #f1f1f1;
-      text-align: center;
-      padding: 40px;"
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="white shadow mg8">
+      <!-- 头像栏 -->
+      <div
+        class="flex"
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
       >
-      <img src="https://i.imgs.ovh/2025/08/17/p7bxO.png" alt="yuanyao" width="80px" height="80px">
+        <img
+          src="https://i.imgs.ovh/2025/08/17/p7bxO.png"
+          width="40px"
+          height="40px"
+          alt="默认头像"
+        />
+        <div style="margin-left: 10px" class="font">桑博·科斯基</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1 font-center" style="flex: 8">
+        <div class="daohang">厨师列表</div>
+        <div class="daohang">顾客评价</div>
+        <div class="daohang">在线点单</div>
+        <div class="daohang">在线客服</div>
+      </div>
+      <div
+        class="flex1 mg8 font-center"
+        style="
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          color: #3e336e;
+        "
+      >
+        深蓝大饭店
+      </div>
+      <div
+        class="flex1 mg8 font-center"
+        style="
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          color: #3e336e;
+        "
+      >
+        【哀丽秘榭社区食堂】
+      </div>
     </div>
-    <div style="
-      max-width: 760px;
-      margin: 30px auto;
-      line-height: 1.2;
-      background-color: #FFFFFF;
-      text-align: center;
-      padding:15px;
-      font-size: 12px;"
-      >
-      
-       <p>1</p>
+    <!-- 主区域 -->
+    <div class="flex1 flex column mg8">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 1" class="white shadow mg8"></div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="flex1 flex">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column white shadow mg8"></div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column white shadow mg8"></div>
       </div>
-        <div style="
-      background-color: #F1F1F1;
-      text-align: center;
-      padding: 40px;
-      font-size: 12px;">
-
-      <p>深蓝大饭店【哀丽秘榭社区食堂】</p>
-
-      </div>
+    </div>
   </body>
 </html>
